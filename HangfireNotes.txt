@@ -1,0 +1,14 @@
+## install database sql, desing, tools  packages
+## install HangFire pacakge 
+
+## TaskService : calss contains our background tasks service/method
+
+## IDashboardAuthorizationFilter : add filter to check before executing task , roles, permession .
+
+## IRecurringJobManager add manager to manage the services , name of each task  and add cron time for each one
+
+## register hangfire service in Web project DependencyInjection
+
+## regitser hangfire in program.cs
+
+## add route "/hangfire" in proxy.config.js in the clientApp folder

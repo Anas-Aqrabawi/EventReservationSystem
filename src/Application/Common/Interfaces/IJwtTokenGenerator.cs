@@ -1,0 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using SampleProject.Core.Entities;
+using SampleProject.Domain.Entities;
+
+namespace SampleProject.Application.Common.Interfaces;
+public interface IJwtTokenGenerator
+{
+    string GenerateToken(User user);
+}
