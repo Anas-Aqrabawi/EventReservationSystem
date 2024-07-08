@@ -35,15 +35,15 @@ public class JwtTokenGenerator : IJwtTokenGenerator
                 new Claim(JwtRegisteredClaimNames.FamilyName,user.Lastname),
                 new Claim(JwtRegisteredClaimNames.Jti,new Guid().ToString()),
                
-            };
-        //if(user.Roleid == 1)
-        //{
-        //    claims.Append( new Claim(ClaimTypes.Role, Roles.Administrator));
-        //}
-        //if (user.Roleid == 2)
-        //{
-        //    claims.Append(new Claim(ClaimTypes.Role, Roles.User));
-        //}
+       };
+        if (user.Roleid == 1)
+        {
+            claims.Append(new Claim(ClaimTypes.Role, Roles.Administrator));
+        }
+        if (user.Roleid == 2)
+        {
+            claims.Append(new Claim(ClaimTypes.Role, Roles.User));
+        }
         var securityToken = new JwtSecurityToken(
             issuer: jwtSettings.Issuer,
             expires: _dateTime.UtcNow.AddHours(jwtSettings.ExpiryInMinutes),
